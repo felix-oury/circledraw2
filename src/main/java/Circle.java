@@ -3,9 +3,10 @@ import java.awt.*; /**
  * an AWT Graphics object using AWT library methods
  * */
 public class Circle {
-    private int rad; // Fields
-    private Point pos;
-    private Color col;
+    private  int rad; // Fields
+    private  Point pos;
+    private  Color col;
+
     public Circle(Point initPos, Color col, int radius){ // The constructor
         rad=radius; // Initialize fields
         pos=initPos;
