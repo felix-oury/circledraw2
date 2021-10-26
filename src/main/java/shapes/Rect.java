@@ -1,6 +1,8 @@
+package shapes;
+
 import java.awt.*;
 
-public class Rect extends Shape{
+public class Rect extends Shape {
     private int width;// Fields
     private int length;
 

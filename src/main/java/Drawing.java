@@ -1,3 +1,7 @@
+import shapes.Circle;
+import shapes.Rect;
+import shapes.Square;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -10,7 +14,7 @@ public class Drawing extends Canvas {
     private Square s;
 
     // The constructor
-    public Drawing(Circle circle,Rect rect,Square square) {
+    public Drawing(Circle circle, Rect rect, Square square) {
         c=circle;
         r=rect;
         s=square;

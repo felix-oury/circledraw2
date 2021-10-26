@@ -1,3 +1,7 @@
+import shapes.Circle;
+import shapes.Rect;
+import shapes.Square;
+
 import java.awt.*;
 
 public class Main{
