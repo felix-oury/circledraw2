@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Square extends Rect{
     private int size;
-    //whats up b0ys
+    //whats up boys
     public Square(Point initPos, Color col, int size){ // The constructor
         super(initPos,col,size,size);
         this.size=size;// Initialize fields
