@@ -1,50 +1,70 @@
-import shapes.Circle;
-import shapes.Rect;
-import shapes.Square;
+import shapes.*;
+import shapes.Shape;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
-public class Drawing extends Canvas {
-    // A private field called f of class Frame. This is also in the AWT.
-    private Frame f;
-    private Circle c;
-    private Rect r;
-    private Square s;
+public class Drawing extends Canvas  implements Drawble
+{
+            ArrayList<Shape> shapes = new ArrayList<Shape>(); // FIELDS
+            private Frame f; // =private field  of class frame, in awt
+            private Circle c;
+            private shapes.Rect r;
+            private Square q;
+            private Graphics g;
 
-    // The constructor
-    public Drawing(Circle circle, Rect rect, Square square) {
-        c=circle;
-        r=rect;
-        s=square;
-
+    public Drawing() //constructor
+    {
         setupFrame();
-        Background();
+        setupBackground();
     }
+        public void addCircle(Point initPos, Color col, int radius) // Methods
+        {
+            Circle circ = new Circle(initPos,col,radius);
+            shapes.add(circ);
+        }
 
-    private void Background() {
-        setBackground(Color.WHITE); // Sets the Canvas background
-        setSize(400, 400); // Sets the Canvas size to be the same as the frame
+        public void addRect(Point initPos, Color col, int width, int height)
+        {
+            Rect rect = new Rect(initPos,col,width,height);
+            shapes.add(rect);
+        }
+
+        public void addSquare(Point initPos, Color col, int side)
+        {
+            Square square = new Square(initPos, col, side);
+            shapes.add(square);
+        }
+
+
+    private void setupBackground() {
+        setBackground(Color.WHITE);  //sets Canvas background
+        setSize(400,400);              // Sets Canavs size to same of frame
     }
 
     private void setupFrame() {
-        f = new Frame("My window");// Instantiates the Frame
-        f.add(this);// Adds the Canvas to the Frame
-        f.setLayout(null);// Stops the frame from trying to layout contents
-        f.setSize(400, 400);// Sets the dimensions of the frame
-        f.setVisible(true);
-        f.addWindowListener(new WindowAdapter() {// Closes the program if close window clicked
-            public void windowClosing(WindowEvent e) {
+        f = new Frame("My window"); //instantiates Frame
+        f.add(this);                //Adds Canvas to Frame
+        f.setLayout(null);          //Stops frame from trying to layout contents
+        f.setSize(400,400);         //Sets dimensions of frame
+        f.setVisible(true);         //makes frame appear on screen
+        f.addWindowListener(new WindowAdapter() //closes program if close window clicked
+        {
+            public void windowClosing(WindowEvent e)
+            {
                 f.dispose();
             }
         });
     }
 
 
-    public void paint(Graphics g){//method
-        c.draw(g);
-        r.draw(g);
-        s.draw(g);
+    public void paint (Graphics g)
+    {
+        for (Shape s: shapes)
+        {
+            s.draw(g);
+        }
     }
 }
