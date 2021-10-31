@@ -2,7 +2,7 @@ package shapes;
 
 import java.awt.*;
 
-public class Rect extends Shape {
+public class Rect extends Shape implements Drawble {
     private int width;// Fields
     private int length;
 

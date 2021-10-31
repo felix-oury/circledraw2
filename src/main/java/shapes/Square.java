@@ -2,9 +2,8 @@ package shapes;
 
 import java.awt.*;
 
-public class Square extends Rect{
+public class Square extends Rect implements Drawble{
     private int size;
-    //whats up b0ys
     public Square(Point initPos, Color col, int size){ // The constructor
         super(initPos,col,size,size);
         this.size=size;// Initialize fields
