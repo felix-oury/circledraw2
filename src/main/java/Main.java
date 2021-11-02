@@ -10,7 +10,7 @@ public class Main{
     public static void main(String[] args) {
 
         Point p1=new Point(50,50);
-        Color c1=new Color(0x992266);
+        Color c1=new Color(0xFF0202);
         Point p2=new Point(100,100);
         Color c2=new Color(0x5C9922);
         Point p3=new Point(250,250);

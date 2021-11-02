@@ -10,10 +10,6 @@ public class Drawing extends Canvas  implements Drawble
 {
             ArrayList<Shape> shapes = new ArrayList<Shape>(); // FIELDS
             private Frame f; // =private field  of class frame, in awt
-            private Circle c;
-            private shapes.Rect r;
-            private Square q;
-            private Graphics g;
 
     public Drawing() //constructor
     {
